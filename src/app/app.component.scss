@@ -1,0 +1,15 @@
+:host {
+  flex: 1;
+  display: flex;
+  .app {
+    flex: 1;
+    display: flex;
+  }
+  // @media (min-width: 450px) and (min-height: 800px) {
+  //   .app {
+  //     flex-direction: column;
+  //     align-items: center;
+  //     justify-content: center;
+  //   }
+  // }
+}
