@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
+import { MatIconRegistry } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-traingles',
@@ -7,15 +9,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainglesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private matIconRegistry : MatIconRegistry,
+    private domSanitizer : DomSanitizer) { 
+      this.matIconRegistry.addSvgIcon(
+        "linkedin",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/linkedin.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "github",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/github.svg")
+      );
+      this.matIconRegistry.addSvgIcon(
+        "mail",
+        this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/mail.svg")
+      );
+    }
 
-  ngOnInit() {
-    
-    // traingle.style.backgroundColor = "gray";
-    // traingle.style.borderBottom = "0px solid transparent";
-    // traingle.style.borderTop = "200px solid green";
-    // traingle.style.borderLeft = "100px solid transparent";
-    // traingle.style.cssText = "{width: 300px; height: 300px; background-color: gray;}"
+  ngOnInit() { 
   }
 
+  clickMe(e) {
+    // console.log(e);
+    var doc = window.document;
+    var docEl = doc.documentElement;
+  
+    var requestFullScreen = docEl.requestFullscreen; //|| docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+    var cancelFullScreen = doc.exitFullscreen;// || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+  
+    if(!doc.fullscreenElement){ //&& !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+      requestFullScreen.call(docEl);
+    }
+    else {
+      cancelFullScreen.call(doc);
+    }
+  }
 }

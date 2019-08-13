@@ -1,11 +1,172 @@
+$color: rgb(136, 216, 192);
+$contrast: rgba(210, 210, 210, 0.26);
+$card: rgba(255, 255, 255, 0.4);
 :host {
-    flex: 1;
+  flex: 1;
+  display: flex;
+  font-family: "Alegreya Sans", sans-serif;
+  .startPage {
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    background-image: radial-gradient(
+        $color, /*rgba(76, 139, 152, 1)*/
+        $contrast 50%, /*rgba(138, 201, 214, 0.05) */
+        transparent 100%
+      ),
+      radial-gradient(
+        $color,
+        rgba(255, 255, 255, 0.116) 75%,
+        transparent 100%
+      ),
+      radial-gradient(
+        $color,
+        $contrast 90%,
+        transparent 100%
+      );
+    background-size: 1000px 500px,750px 500px,750px 500px;
+    background-position: -700px 0, 200px -200px,200px 200px;
     display: flex;
+    flex-direction: column;
+    .header {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-height: 175px;
+      .image_palceholder {
+        width: 130px;
+        height: 130px;
+        // background-color: white;
+        // margin: 20px 0;
+        border-radius: 6em;
+        border: .5em solid rgba(128, 128, 128, 0.6);
+        display: flex;
+        overflow: hidden;
+        .image {
+          flex: 1;
+          background-image: url("../../../assets/profile.jpg");
+          background-size: cover;
+          background-position-x: -60px;
+        }
+      }
+    }
+    .content {
+      flex: 4;
+      background-color: rgba(128, 128, 128, 0.15);
+      display: flex;
+      flex-direction: column;
+      .content_header {
+        flex: 1.5;
+        display: flex;
+        padding: 0 0.8em;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        align-items: flex-end;
+        .intro {
+          flex: 1;
+          max-height: 80%;
+          min-height: 80%;
+          background-color: $card;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          .title {
+            flex: 1;
+            font-size: 1.8em;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            #custom {
+              color: blue;
+              font-style: bold;
+            }
+          }
+          .sub-title {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            font-size: 1.2em;
+          }
+        }
+      }
+      .content_body {
+        flex: 3;
+        display: flex;
+        padding: 0 0.8em;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        align-items: center;
+        // background-color: aqua;
+        .about_me {
+          flex: 1;
+          text-align: justify;
+          border-radius: 10px;
+          background-color: $card;
+          padding: 5px 10px;
+          margin-top: -20px;
+        }
+      }
+    }
+    .footer {
+      flex: 1;
+      // background-color: aqua;
+      max-height: 50px;
+      display: flex;
+      .links {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        mat-icon {
+          min-width: unset;
+          min-height: unset;
+          height: unset;
+          width: unset;
+          padding: 6px 0;
+        }
+        .mail {
+          padding: unset;
+        }
+      }
+
+    }
+  }
+}
+
+@media only screen and (min-width: 450px) and (min-height: 500px) {
+  :host {
     align-items: center;
     justify-content: center;
-    .triangles {
-        width: 500px;
-        height: 400px;
-        background-color: rgba(0, 0, 255, 0.20);
+    .startPage {
+      max-width: 700px;
+      max-height: 450px;
     }
+  }
 }
+@media (orientation: landscape) {
+  :host {
+    .startPage {
+      flex-direction: row;
+      .footer {
+        max-height: unset;
+        max-width: 50px;
+        .links {
+          flex-direction: column;
+          mat-icon {
+            padding: 0 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (orientation: portrait) {
+
+}
+
+

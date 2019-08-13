@@ -1,9 +1,11 @@
 :host {
-  flex: 1;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  .app {
+  #app {
     flex: 1;
     display: flex;
+    overflow: hidden;
   }
   // @media (min-width: 450px) and (min-height: 800px) {
   //   .app {
