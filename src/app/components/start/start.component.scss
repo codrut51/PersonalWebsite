@@ -1,6 +1,4 @@
-$color: rgb(136, 216, 192);
-$contrast: rgba(210, 210, 210, 0.26);
-$card: rgba(255, 255, 255, 0.4);
+@import "../../../theme.scss";
 :host {
   flex: 1;
   display: flex;
@@ -53,7 +51,7 @@ $card: rgba(255, 255, 255, 0.4);
     }
     .content {
       flex: 4;
-      background-color: rgba(128, 128, 128, 0.15);
+      background-color: $content;
       display: flex;
       flex-direction: column;
       .content_header {

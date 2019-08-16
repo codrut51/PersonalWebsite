@@ -8,8 +8,6 @@ import { StartComponent } from './components/start/start.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from "@angular/common/http";
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { DetailsComponent } from './components/details/details.component';
-import { DetailComponent } from './components/detail/detail.component';
 import { SkillComponent } from './components/skill/skill.component';
 
 @NgModule({
@@ -17,8 +15,6 @@ import { SkillComponent } from './components/skill/skill.component';
     AppComponent,
     StartComponent,
     NotFoundComponent,
-    DetailsComponent,
-    DetailComponent,
     SkillComponent
   ],
   imports: [
