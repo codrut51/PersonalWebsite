@@ -24,9 +24,10 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
+              "src/favicon.ico",
+              "src/image.png",
               "src/assets",
-              "src/assets/favicon.ico",
-              "src/assets/image.png",
+              "src/_redirects",
               "src/_redirects/netlify.bash"
             ],
             "styles": [
