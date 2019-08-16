@@ -27,8 +27,7 @@
               "src/favicon.ico",
               "src/image.png",
               "src/assets",
-              "src/_redirects",
-              "src/_redirects/netlify.bash"
+              "src/_redirects"
             ],
             "styles": [
               "src/styles.scss"
